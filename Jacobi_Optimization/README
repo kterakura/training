@@ -1,0 +1,40 @@
+Credit:
+Pradeep Kumar Gupta - NVIDIA Corporation
+
+Description:
+This code performs Point Jacobi Iterative method on CPU (sequential code) and 
+on NVIDIA GPU for 2D data (For details of algorithm refer to PPT 
+Instruction.ppt). This code is developed for reference and just to demonstrate 
+the speedup using CUDA and can be optimized further.
+
+Files:
+  Exercise:
+    Contains files which should be shared with attendees. This contains incomplete Kernels 
+  Solution:
+    Complete solved Exercise 
+  Instruction.ppt – This presentation talks about the recommended flow of teaching of this CUDA C Sample. 
+
+Compile: 
+Prerequisite for compiling and running
+  Installed NVIDIA Toolkit, Driver (5.0 version)
+Arguments to executable:
+  - Ni=XX  : Specify XX number of elements in Y direction (optional, default=512)
+  - Nj=XX : Specify XX number of elements in X direction (optional, default=512)
+  -iterations=XX: Specify XX number of iterations the Kernel will be called (optional, default=10000)
+  -kernel=XX : XX can take value 1 or 2 ( optional, default=2)
+    -kernel=1:: will launch un- optimized GPU kernel
+    -kernel=2 :: will launch optimized GPU kernel
+Put the Makefile in the directory where the code is
+Just type "make"
+
+Flow:
+Please refer Instruction.ppt for teaching this sample to attendees. 
+
+
+References:
+Lots of CFD applications have already been accelerated using CUDA. To list a few please refer to link below
+  http://www.nvidia.com/object/computational_fluid_dynamics.html
+  http://www.gpgpu.org/static/sc2008/M02-08_CFD.pdf
+You may look at the following site for more details on optimizing CFD applications using 3D data on CUDA
+  http://www.gpgpu.org/static/sc2008/M02-04_Optimization.pdf
+You may also look at the CFD code on 3D data in the CUDA SDK samples at location: ~CUDA_SDK_PATH/src/FDTD3d
